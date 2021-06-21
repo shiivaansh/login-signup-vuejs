@@ -2,47 +2,49 @@
   <div>
     <h5>Welcome back, Login to continue</h5>
     <div class="loginPage">
-      <div class="login-field">
-        <label for="email">Email*</label>
-        <q-input
-          lazy-rules
-          :rules="[val => (val && val.length > 0) || 'E-mail Required']"
-          class="text-input"
-          outlined
-          v-model="email"
-          @input="updateEmail()"
+      <center>
+        <div class="login-field">
+          <q-input
+            lazy-rules
+            :rules="[val => (val && val.length > 0) || 'E-mail Required']"
+            class="text-input"
+            outlined
+            v-model="email"
+            @input="updateEmail()"
+            label="E-mail"
+          />
+        </div>
+        <div class="login-field1">
+          <q-input
+            lazy-rules
+            :rules="[val => (val && val.length > 0) || 'Password Required']"
+            class="text-input"
+            outlined
+            type="password"
+            v-model="password"
+            label="Password"
+          />
+          <h6 class="forgot">
+            <router-link style="text-decoration: none;" to="/forgot"
+              >*Forgot Password</router-link
+            >
+          </h6>
+        </div>
+
+        <q-btn
+          class="login-button"
+          color="primary"
+          @click="goToHome()"
+          label="Login"
         />
-      </div>
-      <div class="login-field1">
-        <label for="password">Password*</label>
-        <q-input
-          lazy-rules
-          :rules="[val => (val && val.length > 0) || 'Password Required']"
-          class="text-input"
-          outlined
-          type="password"
-          v-model="password"
-        />
-        <h6 class="forgot">
-          <router-link style="text-decoration: none;" to="/forgot"
-            >*Forgot Password</router-link
+
+        <h6 class="bottom-line">
+          Don't have an account?
+          <router-link style="text-decoration: none;" to="/signup"
+            >Sign Up</router-link
           >
         </h6>
-      </div>
-
-      <q-btn
-        class="login-button"
-        color="primary"
-        @click="goToHome()"
-        label="Login"
-      />
-
-      <h6 class="bottom-line">
-        Don't have an account?
-        <router-link style="text-decoration: none;" to="/signup"
-          >Sign Up</router-link
-        >
-      </h6>
+      </center>
     </div>
   </div>
 </template>
@@ -81,12 +83,12 @@ h5 {
 .text-input {
   width: 300px;
   align-content: center;
-  left: 50%;
+  /* left: 50%; */
 }
 .loginPage {
   align-items: auto;
   position: relative;
-  margin-left: 480px;
+  /* margin-left: 480px; */
 }
 .login-field {
   padding-bottom: 17px;

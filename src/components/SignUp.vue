@@ -1,58 +1,56 @@
 <template>
   <div class="signup">
-    <h5>Welcome, Create a new account!</h5>
+    <div>
+      <h5>Welcome, Create a new account!</h5>
+    </div>
     <div class="loginPage">
-      <div class="login-field">
-        <label for="email">First Name*</label>
+      <center>
+        <!-- <label for="email">First Name*</label> -->
         <q-input
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'First Name Required']"
-          class="text-input"
           outlined
           v-model="firstName"
+          label="First Name"
         />
-      </div>
-      <div class="login-field">
-        <label for="email">Last Name*</label>
+
+        <!-- <label for="email">Last Name*</label> -->
         <q-input
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'Last Name Required']"
-          class="text-input"
           outlined
           v-model="lastName"
+          label="Last Name"
         />
-      </div>
-      <div class="login-field">
-        <label for="email">Email*</label>
+
+        <!-- <label for="email">Email*</label> -->
         <q-input
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'E-mail Required']"
-          class="text-input"
           outlined
           v-model="email"
+          label="Email"
         />
-      </div>
-      <div class="login-field">
-        <label for="email">Phone Number*</label>
+
+        <!-- <label for="email">Phone Number*</label> -->
         <q-input
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'Phone Number Required']"
-          class="text-input"
           outlined
           v-model="phoneNumber"
+          label="Phone Number"
         />
-      </div>
-      <div class="login-field1">
-        <label for="password">Password*</label>
+
+        <!-- <label for="password">Password*</label> -->
         <q-input
           lazy-rules
           :rules="[val => (val && val.length > 0) || 'Password Required']"
-          class="text-input"
           outlined
           type="password"
           v-model="password"
+          label="Password"
         />
-      </div>
+      </center>
 
       <q-btn
         class="signup-button"
@@ -105,26 +103,28 @@ export default {
 </script>
 <style scoped>
 .signup {
-  align-content: center;
+  margin: auto;
 }
 h5 {
   text-align: center;
 }
-.text-input {
-  width: 300px;
-  align-content: center;
-  left: 50%;
-}
+
 .loginPage {
-  align-items: center;
-  margin-left: 810px;
+  text-align: center;
+  position: relative;
+  justify-content: center;
+  vertical-align: middle;
 }
-.login-field {
-  padding-bottom: 17px;
+
+.loginPage .q-input {
+  width: 300px;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 13px;
 }
-.login-field1 {
+/* .login-field1 {
   padding-bottom: 0px;
-}
+} */
 /* .loginbb {
   padding-bottom: 2px;
 } */
@@ -153,5 +153,8 @@ h5 {
 }
 .signup-button {
   width: 300px;
+}
+.pw {
+  padding-bottom: 100px;
 }
 </style>
