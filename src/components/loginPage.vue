@@ -54,7 +54,7 @@
                 <div class="col-5">
                   <h6>
                     Don't have an account?
-                    <router-link  style="text-decoration: none;" to="/signin">Sign Up</router-link>
+                    <router-link  style="text-decoration: none;" to="/signup">Sign Up</router-link>
                   </h6>
                 </div>
                 <div class="col-4"></div>
@@ -66,29 +66,24 @@
     </q-layout>
 </template>
 <script>
-import { mapState, mapGetters, mapActions } from "vuex";
+import axios from 'axios';
+
 export default {
   name: "Login",
 
   data() {
     return {
-      email: "",
-      password: ""
+      email: null,
+      password: null, 
     };
   },
   methods: {
     goToHome() {
       this.$router.push("/welcome");
     },
-    goToSignUp() {
-      this.$router.push("/signin");
-    },
-    ...mapActions({
-      updateEmail: "updateEmail"
-    }),
-    updateEmail() {
-      this.$store.commit("updateEmail", this.email);
-    },
+    
+   
+    
     handleSubmit() {
       //to check if data is being added to db
       const data = {
@@ -97,6 +92,11 @@ export default {
         password: this.password
       };
       console.log(data);
+       
+        axios.post('/user_Login.json', data)
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
+    
     }
   },
   computed: {}

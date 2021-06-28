@@ -2,7 +2,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('src/components/Login.vue'),
+    component: () => import('src/components/loginPage.vue'),
     // children: [
     //   { path: '', component: () => import('pages/Index.vue') }
     // ]
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: '/signup',
-    component: () => import('components/SignUp.vue')
+    component: () => import('components/signupPage.vue')
   }
 ]
 
