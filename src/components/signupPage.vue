@@ -64,7 +64,7 @@
                   <div class="col q-pt-lg q-py-none">
                     <q-input
                         outlined
-                        v-model="password"
+                        v-model="email"
                         label="E-mail"
                         class="q-mt "
                         lazy-rules
@@ -118,6 +118,7 @@
 
 
 <script>
+import axios from 'axios';
 export default {
   name:'signup',
   data () {
@@ -148,7 +149,10 @@ export default {
         email:this.email,
         password:this.password,
       }; 
-      console.log(data)
+      console.log(data);
+        axios.post('/user_SignUp.json', data)
+        .then(res => console.log(res))
+        .catch(error => console.log(error))
       }
     }
 
